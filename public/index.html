@@ -1,7 +1,9 @@
 <script type="text/javascript">
 //  K802gUqb3cmcE4GvCR7wjW6i6Z36E0Ya
 // var socket = new WebSocket('ws://echo.websocket.org'); 
-var socket = new WebSocket('ws://127.0.0.1:8080', 'ttt', false); 
+var socket = new WebSocket('ws://127.0.0.1:8080', 'ttt', function(){
+
+}); 
 // socket.send('Ping');
  // socket.send('I am the client and I\'m listening!'); 
 socket.ondata = function(data){
@@ -28,7 +30,7 @@ socket.onclose = function(event) {
 
 socket.onmessage = function(event) {
     console.log('Client received a message',event); 
-  }; 
+}; 
 
 // socket.send(0, 'connected', {socketid: null});
 </script>
@@ -45,3 +47,12 @@ socket.onmessage = function(event) {
     socket.emit('my disconnected event', { my: 'data' });
   });
 </script> -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>

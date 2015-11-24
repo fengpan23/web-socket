@@ -1,3 +1,5 @@
+// global.config = process.env.NODE_ENV === 'development' ? require('./config.dev.js') : require('./config.js');
+
 const express = require('express');
 const app = express();
 
