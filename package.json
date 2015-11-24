@@ -1,0 +1,24 @@
+{
+  "name": "web-socket",
+  "version": "1.0.0",
+  "description": "html5 socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengpan23/web-socket.git"
+  },
+  "keywords": [
+    "html5",
+    "web",
+    "socket"
+  ],
+  "author": "fengpan90@yahoo.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengpan23/web-socket/issues"
+  },
+  "homepage": "https://github.com/fengpan23/web-socket#readme"
+}
