@@ -1,58 +1,29 @@
-<script type="text/javascript">
-//  K802gUqb3cmcE4GvCR7wjW6i6Z36E0Ya
-// var socket = new WebSocket('ws://echo.websocket.org'); 
-var socket = new WebSocket('ws://127.0.0.1:8080', 'ttt', function(){
+<!DOCTYPE html>
+<html>
+  <head>
+      	<title>web socket test</title>
+  </head>
+<body>
+	<form action="/connect" method="post">
+		connect ip :<input name="ip" />
+		connect port :<input/>
+		tableid : <input/>
+		<!-- use game name load form config -->
+	    gameid(10000002) : <input/> 
+	    session(88o1T3680cWE3mZuvPTyV6IMIU0hWbor) : <input/>
 
-}); 
-// socket.send('Ping');
- // socket.send('I am the client and I\'m listening!'); 
-socket.ondata = function(data){
-  console.log('ddddddd');
-}
+	    <button type="submit">连接</button>
+	</form>
+</body>
+</html>
 
-// 打开Socket 
-socket.onopen = function(event) { 
-  // 发送一个初始化消息
-  console.log('event ', event);
-  socket.send('I am the client and I\'m listening!'); 
-  // 监听消息
- 
-  // 监听Socket的关闭
-  // 关闭Socket.... 
- socket.onmessage = function(event) {
-    console.log('Client received a message',event); 
-  }; 
-  //socket.close() 
-};
-socket.onclose = function(event) { 
-  console.log('Client notified socket has closed',event); 
-}; 
 
-socket.onmessage = function(event) {
-    console.log('Client received a message',event); 
-}; 
-
-// socket.send(0, 'connected', {socketid: null});
-</script>
-<!-- <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script>
-  var socket = io('http://localhost:8080');
-  socket.on('connected', function (data) {
-    console.log(data);
-    socket.emit('my connected event', { my: 'data' });
-  });
-
-   socket.on('disconnected', function (data) {
-    console.log(data);
-    socket.emit('my disconnected event', { my: 'data' });
-  });
-</script> -->
-
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  var socket = io.connect('http://localhost');
-  socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
-  });
+    var socket = io.connect('http://localhost:3000');
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+    });
 </script>
+
